@@ -2,6 +2,8 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
+import AuthButtons from "@/components/AuthButtons";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -16,8 +18,7 @@ export default function HomePage() {
           </Button>
         </div>
         <div className="flex gap-4">
-          <Button variant="ghost" className="text-white">Sign In</Button>
-          <Button variant="outline" className="bg-white text-green-700 hover:bg-green-100">Sign Up</Button>
+          <AuthButtons />
         </div>
       </header>
 
@@ -32,6 +33,13 @@ export default function HomePage() {
           <span className="cursor-pointer hover:underline">LoRA Fine-tuning</span>
           <span className="cursor-pointer hover:underline">Model Compression</span>
           <span className="cursor-pointer hover:underline">Diffusion Theory</span>
+        </div>
+        <div className="mt-8">
+          <Link href="/articles">
+            <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+              Explore All Articles
+            </button>
+          </Link>
         </div>
       </section>
 
@@ -52,7 +60,10 @@ export default function HomePage() {
               className={`${item.color} rounded-xl p-6 text-white shadow hover:shadow-lg transition`}
             >
               <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+              <Button
+                variant="outline"
+                className="bg-white text-gray-900 border border-gray-200 hover:bg-gray-100 hover:text-black"
+              >
                 View more →
               </Button>
             </div>
